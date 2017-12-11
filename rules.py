@@ -34,37 +34,37 @@ class rules():
 			# If snake X and Y coordinates equals to mouse X and Y
 			elif(catcher.coordinates[0][0] - 1 == food_for_catcher.coordinates[0][0] and catcher.coordinates[0][1] == food_for_catcher.coordinates[0][1]):
 				rules.eat(mouseSymbol, sub, catcher, food_for_catcher)
-				renderer.map.print_table()
+				renderer.map.print_map()
 			else:
 				rules.move(mouseSymbol,sub, catcher)
-				renderer.map.print_table()
+				renderer.map.print_map()
 		elif(insert=="s"):
-			if(catcher.coordinates[0][0] == 10):
+			if(catcher.coordinates[0][0] == renderer.map.get_mapSize() - 2):
 				rules.gameOver()
 			elif(catcher.coordinates[0][0] + 1 == food_for_catcher.coordinates[0][0] and catcher.coordinates[0][1] == food_for_catcher.coordinates[0][1]):
 				rules.eat(mouseSymbol, add, catcher, food_for_catcher)
-				renderer.map.print_table()
+				renderer.map.print_map()
 			else:
 				rules.move(mouseSymbol,add, catcher)
-				renderer.map.print_table()
+				renderer.map.print_map()
 		elif(insert=="a"):
 			if(catcher.coordinates[0][1] == 1):
 				rules.gameOver()
 			elif(catcher.coordinates[0][0] == food_for_catcher.coordinates[0][0] and catcher.coordinates[0][1] - 1 == food_for_catcher.coordinates[0][1]):
 				rules.eat(snakeSymbol, sub, catcher, food_for_catcher)
-				renderer.map.print_table()
+				renderer.map.print_map()
 			else:
 				rules.move(snakeSymbol,sub,catcher)
-				renderer.map.print_table()
+				renderer.map.print_map()
 		elif(insert=="d"):
-			if(catcher.coordinates[0][1] == 10):
+			if(catcher.coordinates[0][1] == renderer.map.get_mapSize() - 2):
 				rules.gameOver()
 			elif(catcher.coordinates[0][0] == food_for_catcher.coordinates[0][0] and catcher.coordinates[0][1] + 1 == food_for_catcher.coordinates[0][1]):
 				rules.eat(snakeSymbol, add, catcher, food_for_catcher)
-				renderer.map.print_table()
+				renderer.map.print_map()
 			else:
 				rules.move(snakeSymbol,add,catcher)
-				renderer.map.print_table()
+				renderer.map.print_map()
 		print('SCORE:',(length-1))
 
 	'''
@@ -118,7 +118,7 @@ class rules():
 		renderer.map.table[catcher.coordinates[0][0]][catcher.coordinates[0][1]] = snakeHeadSymbol
 
 	def exit():
-		renderer.map.print_table()
+		renderer.map.print_map()
 		print('DO NOT LEAVE FIELD!')
 
 	def gameOver():

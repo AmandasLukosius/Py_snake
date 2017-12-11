@@ -1,6 +1,6 @@
 from random import randint
 from time import sleep
-import renderer
+import renderer, rules
 
 class creature():
 
@@ -13,10 +13,10 @@ class creature():
 	def spawn(self, mark):
 		looping = True
 		while(looping):
-			y = randint(1,10)
-			x = randint(1,10)
-			if renderer.map.table[y][x] == ' ':
-				renderer.map.table[y][x] = mark
-				self.add_coordinate([y,x])
+			x = randint(1,renderer.map.get_mapSize() - 2)
+			y = randint(1,renderer.map.get_mapSize() - 2)
+			if renderer.map.table[x][y] == rules.isEmpty:
+				renderer.map.table[x][y] = mark
+				self.add_coordinate([x,y])
 				looping = False
 			sleep(0.001)
