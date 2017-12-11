@@ -12,8 +12,8 @@ gameStart.gameStart.greetings()
 renderer.map.create_map()
 
 # Creating instances of classes
-Snake = creatures.creature()
-Mouse = creatures.creature()
+Snake = creatures.animal()
+Mouse = creatures.animal()
 
 # Adding Snake and Mouse to the map
 Snake.spawn(r.snakeHeadSymbol)

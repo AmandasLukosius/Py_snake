@@ -5,7 +5,7 @@ from creatures import creature
 class TestCreature(unittest.TestCase):
 
 	def test_coordinates(self):
-		Sheep = creature()
+		Sheep = animal()
 
 		Sheep.add_coordinate([5,6])
 
@@ -16,7 +16,7 @@ class TestCreature(unittest.TestCase):
 		self.assertEqual(Sheep.coordinates[1], [1,10])
 
 	def test_spawn(self):
-		Elephant = creature()
+		Elephant = animal()
 		renderer.map.create_map()
 		Elephant.spawn('E')
 
